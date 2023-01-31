@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+watch() {
+    find . \( -name '*.bqn' -o -name '*.c' \) | entr -r $0 $@
+}
+
+c() {
+    time (cc $1 && ./a.out)
+}
+
+"$@"
